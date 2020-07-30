@@ -1,0 +1,729 @@
+{
+    "steps": [
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "HASHVALUE(@Company Name - DS1@ ,\"orgcleansing\")",
+            "newColumnName": "Cleansed Company Name - DS1",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "hashvalue(@Cleansed Company Name - DS1@ ,\"multikeygenerator\")",
+            "newColumnName": "Company Name MultiKey Column - DS1",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "SplitColumn",
+            "active": true,
+            "publishPoints": null,
+            "columnName": "Company Name MultiKey Column - DS1",
+            "newColumns": [
+                {
+                    "name": "Company Name MultiKey Column - DS1 (1)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (2)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (3)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (4)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (5)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (6)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (7)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (8)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (9)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (10)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (11)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (12)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (13)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (14)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (15)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (16)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (17)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (18)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (19)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (20)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (21)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (22)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (23)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (24)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (25)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (26)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (27)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (28)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (29)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (30)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (31)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (32)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (33)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (34)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (35)",
+                    "active": true
+                },
+                {
+                    "name": "Company Name MultiKey Column - DS1 (36)",
+                    "active": true
+                }
+            ],
+            "splitType": "Match",
+            "separator": ",",
+            "regexType": "Separator",
+            "regexOptions": "",
+            "splitLengths": [
+            ],
+            "facets": null,
+            "muteFacets": null,
+            "matchRightToLeft": null,
+            "generateMinMax": false,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Pivot",
+            "active": true,
+            "publishPoints": null,
+            "anchors": [
+                "Company Name",
+                "Address Part 1",
+                "City",
+                "Zip",
+                "ID",
+                "Cleansed Company Name - DS1"
+            ],
+            "columnNames": [
+                "Company Name MultiKey Column - DS1 (1)",
+                "Company Name MultiKey Column - DS1 (2)",
+                "Company Name MultiKey Column - DS1 (3)",
+                "Company Name MultiKey Column - DS1 (4)",
+                "Company Name MultiKey Column - DS1 (5)",
+                "Company Name MultiKey Column - DS1 (6)",
+                "Company Name MultiKey Column - DS1 (7)",
+                "Company Name MultiKey Column - DS1 (8)",
+                "Company Name MultiKey Column - DS1 (9)",
+                "Company Name MultiKey Column - DS1 (10)",
+                "Company Name MultiKey Column - DS1 (11)",
+                "Company Name MultiKey Column - DS1 (12)",
+                "Company Name MultiKey Column - DS1 (13)",
+                "Company Name MultiKey Column - DS1 (14)",
+                "Company Name MultiKey Column - DS1 (15)",
+                "Company Name MultiKey Column - DS1 (16)",
+                "Company Name MultiKey Column - DS1 (17)",
+                "Company Name MultiKey Column - DS1 (18)",
+                "Company Name MultiKey Column - DS1 (19)",
+                "Company Name MultiKey Column - DS1 (20)",
+                "Company Name MultiKey Column - DS1 (21)",
+                "Company Name MultiKey Column - DS1 (22)",
+                "Company Name MultiKey Column - DS1 (23)",
+                "Company Name MultiKey Column - DS1 (24)",
+                "Company Name MultiKey Column - DS1 (25)",
+                "Company Name MultiKey Column - DS1 (26)",
+                "Company Name MultiKey Column - DS1 (27)",
+                "Company Name MultiKey Column - DS1 (28)",
+                "Company Name MultiKey Column - DS1 (29)",
+                "Company Name MultiKey Column - DS1 (30)",
+                "Company Name MultiKey Column - DS1 (31)",
+                "Company Name MultiKey Column - DS1 (32)",
+                "Company Name MultiKey Column - DS1 (33)",
+                "Company Name MultiKey Column - DS1 (34)",
+                "Company Name MultiKey Column - DS1 (35)",
+                "Company Name MultiKey Column - DS1 (36)"
+            ],
+            "aggregateFunctions": [
+                {
+                    "columnName": "ID",
+                    "newColumnName": "Count - ID",
+                    "aggregateType": "Count"
+                }
+            ],
+            "pivotValues": [
+            ],
+            "unpivotColumnName": "Delete me",
+            "unpivotMetricName": "Join Key Company - DS1",
+            "pivotType": "Unpivot",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "DeleteRows",
+            "active": true,
+            "publishPoints": null,
+            "facets": [
+                {
+                    "type": "value",
+                    "id": "Text",
+                    "columnName": "Join Key Company - DS1",
+                    "dataType": "String",
+                    "invert": false,
+                    "features": {
+                        "nulls": true,
+                        "errors": true,
+                        "other": true,
+                        "showType": true
+                    },
+                    "filterBy": null,
+                    "facetValues": [
+                        {
+                            "value": "",
+                            "exclude": false,
+                            "disabled": false
+                        }
+                    ],
+                    "transformFn": null,
+                    "useDynamicPercentile": false,
+                    "customPercentiles": null,
+                    "selectedPercentiles": null,
+                    "selectedView": null
+                }
+            ],
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "EditColumns",
+            "active": true,
+            "publishPoints": null,
+            "columns": [
+                {
+                    "name": "Delete me",
+                    "active": false,
+                    "origName": null
+                }
+            ],
+            "snapColumns": true,
+            "reordered": false,
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "LookupTable",
+            "active": true,
+            "publishPoints": null,
+            "steps": [
+                {
+                    "type": "Import",
+                    "active": true,
+                    "publishPoints": null,
+                    "libraryId": "",
+                    "libraryVersion": 1,
+                    "columns": [
+                        {
+                            "hidden": false,
+                            "columnDisplayName": "ID (1)",
+                            "columnType": "Number",
+                            "columnName": "ID"
+                        },
+                        {
+                            "hidden": false,
+                            "columnDisplayName": "Company",
+                            "columnType": "String",
+                            "columnName": "Company"
+                        },
+                        {
+                            "hidden": false,
+                            "columnDisplayName": "Address",
+                            "columnType": "String",
+                            "columnName": "Address"
+                        },
+                        {
+                            "hidden": false,
+                            "columnDisplayName": "CityName",
+                            "columnType": "String",
+                            "columnName": "CityName"
+                        },
+                        {
+                            "hidden": false,
+                            "columnDisplayName": "ZipCode",
+                            "columnType": "Number",
+                            "columnName": "ZipCode"
+                        }
+                    ],
+                    "samplingConfig": null,
+                    "datagen": false,
+                    "facets": null,
+                    "muteFacets": null,
+                    "libraryIdWithVersion": ""
+                },
+                {
+                    "type": "Expression",
+                    "active": true,
+                    "publishPoints": null,
+                    "expression": "hashvalue(@Company Name - DS2@ ,\"orgcleansing\")",
+                    "newColumnName": "Cleansed Company Name - DS2",
+                    "facets": null,
+                    "muteFacets": null
+                },
+                {
+                    "type": "Expression",
+                    "active": true,
+                    "publishPoints": null,
+                    "expression": "hashvalue(@Cleansed Company Name - DS2@ ,\"multikeygenerator\")",
+                    "newColumnName": "Company Name MultiKey Column - DS2",
+                    "facets": null,
+                    "muteFacets": null
+                },
+                {
+                    "type": "SplitColumn",
+                    "active": true,
+                    "publishPoints": null,
+                    "columnName": "Company Name MultiKey Column - DS2",
+                    "newColumns": [
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (1)",
+                            "active": true
+                        },
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (2)",
+                            "active": true
+                        },
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (3)",
+                            "active": true
+                        },
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (4)",
+                            "active": true
+                        },
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (5)",
+                            "active": true
+                        },
+                        {
+                            "name": "Company Name MultiKey Column - DS2 (6)",
+                            "active": true
+                        }
+                    ],
+                    "splitType": "Match",
+                    "separator": ",",
+                    "regexType": "Separator",
+                    "regexOptions": "",
+                    "splitLengths": [
+                            ],
+                    "facets": null,
+                    "muteFacets": null,
+                    "matchRightToLeft": null,
+                    "generateMinMax": false
+                },
+                {
+                    "type": "Pivot",
+                    "active": true,
+                    "publishPoints": null,
+                    "anchors": [
+                        "Company",
+                        "Address",
+                        "CityName",
+                        "Cleansed Company Name - DS2",
+                        "ID (1)",
+                        "ZipCode"
+                    ],
+                    "columnNames": [
+                        "Company Name MultiKey Column - DS2 (1)",
+                        "Company Name MultiKey Column - DS2 (2)",
+                        "Company Name MultiKey Column - DS2 (3)",
+                        "Company Name MultiKey Column - DS2 (4)",
+                        "Company Name MultiKey Column - DS2 (5)",
+                        "Company Name MultiKey Column - DS2 (6)"
+                    ],
+                    "aggregateFunctions": [
+                        {
+                            "columnName": "ID (1)",
+                            "newColumnName": "Count - ID (1)",
+                            "aggregateType": "Count"
+                        }
+                    ],
+                    "pivotValues": [
+                            ],
+                    "unpivotColumnName": "Columns",
+                    "unpivotMetricName": "Join Key Company - DS2",
+                    "pivotType": "Unpivot",
+                    "facets": null,
+                    "muteFacets": null
+                },
+                {
+                    "type": "DeleteRows",
+                    "active": true,
+                    "publishPoints": null,
+                    "facets": [
+                        {
+                            "type": "value",
+                            "id": "Text",
+                            "columnName": "Join Key Company - DS2",
+                            "dataType": "String",
+                            "invert": false,
+                            "features": {
+                                "nulls": true,
+                                "errors": true,
+                                "other": true,
+                                "showType": true
+                            },
+                            "filterBy": null,
+                            "facetValues": [
+                                {
+                                    "value": "",
+                                    "exclude": false,
+                                    "disabled": false
+                                }
+                            ],
+                            "transformFn": null,
+                            "useDynamicPercentile": false,
+                            "customPercentiles": null,
+                            "selectedPercentiles": null,
+                            "selectedView": null
+                        }
+                    ],
+                    "muteFacets": null
+                },
+                {
+                    "type": "EditColumns",
+                    "active": true,
+                    "publishPoints": null,
+                    "columns": [
+                        {
+                            "name": "Columns",
+                            "active": false,
+                            "origName": null
+                        }
+                    ],
+                    "snapColumns": true,
+                    "reordered": false,
+                    "facets": null,
+                    "muteFacets": null
+                }
+            ],
+            "targetJoinColumns": [
+                "Join Key Company - DS1"
+            ],
+            "sourceJoinColumns": [
+                "Join Key Company - DS2"
+            ],
+            "joinType": "Inner",
+            "matchType": "StandardLucene",
+            "matchOptions": {
+                "wordOrder": "ignoring",
+                "case": "ignoring",
+                "whitespace": "separating",
+                "punctuation": "separating",
+                "punctuationList": [
+                    ",",
+                    "-"
+                ]
+            },
+            "reverse": false,
+            "joinPlan": null,
+            "lookupType": "Join",
+            "custom": {
+                "targetColumns": [
+                    "Join Key Company - DS1"
+                ],
+                "sourceColumns": [
+                    "Join Key Company - DS2"
+                ]
+            },
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "rgba(122, 188, 77, 1)"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "int(HASHVALUE(@Cleansed Company Name - DS1@ ,\"PaxLevenshtein\",@Cleansed Company Name - DS2@ ))",
+            "newColumnName": "Name Matching",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "HASHVALUE(@Address - DS2@ ,\"orgcleansing\")",
+            "newColumnName": "Cleansed Address - DS2",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "HASHVALUE(@Address - DS1@ ,\"orgcleansing\")",
+            "newColumnName": "Cleansed Address - DS1",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "int(HASHVALUE(@Cleansed Address - DS2@  ,\"PaxLevenshtein\",@Cleansed Address - DS1@))",
+            "newColumnName": "Address Matching",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "expression": "int(HASHVALUE(str(@City - DS1@ )  ,\"PaxLevenshtein\",str(@City - DS2@ )))",
+            "newColumnName": "Address Part2 Matching",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": [
+                "Matching Records",
+                "Non Matching"
+            ],
+            "expression": "master_matching_expression",
+            "newColumnName": "Master Matching Column",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    ],
+                "Warning": [
+                    ]
+            },
+            "color": "#999"
+        },
+        {
+            "type": "DeleteRows",
+            "active": true,
+            "publishPoints": null,
+            "annotation": null,
+            "facets": [
+                {
+                    "type": "value",
+                    "id": "Histo",
+                    "columnName": "Master Matching Column",
+                    "dataType": "Number",
+                    "invert": true,
+                    "features": {
+                        "nulls": true,
+                        "errors": true,
+                        "other": true,
+                        "showType": true
+                    },
+                    "filterBy": null,
+                    "facetValues": [
+                        {
+                            "value": {
+                                "type": "Range",
+                                "inclusive": false,
+                                "start": {
+                                    "type": "Number",
+                                    "value": "74.5"
+                                },
+                                "end": {
+                                    "type": "Number",
+                                    "value": "100.25"
+                                }
+                            },
+                            "exclude": false,
+                            "disabled": false
+                        }
+                    ],
+                    "transformFn": null,
+                    "useDynamicPercentile": false,
+                    "customPercentiles": null,
+                    "selectedPercentiles": null,
+                    "selectedView": null
+                }
+            ],
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    
+                ],
+                "Warning": [
+                    
+                ]
+            },
+            "color": "#999"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "dsId": "0fe8f80527be4489998b410dd9c05eb2",
+    "dsName": "target",
+    "steps": [
+        {
+            "type": "AnchorTable",
+            "active": true,
+            "publishPoints": null,
+            "annotation": null,
+            "facets": null,
+            "importStep": {
+                "type": "Import",
+                "active": true,
+                "publishPoints": null,
+                "annotation": null,
+                "libraryId": "49a564256d2d4821a08135ccb4a39547",
+                "libraryVersion": 1,
+                "columns": [
+                    {
+                        "hidden": false,
+                        "columnType": "Number",
+                        "columnName": "ID",
+                        "columnDisplayName": "ID"
+                    },
+                    {
+                        "hidden": false,
+                        "columnType": "String",
+                        "columnName": "Company Name",
+                        "columnDisplayName": "Company Name"
+                    },
+                    {
+                        "hidden": false,
+                        "columnType": "String",
+                        "columnName": "Address Part 1",
+                        "columnDisplayName": "Address Part 1"
+                    },
+                    {
+                        "hidden": false,
+                        "columnType": "String",
+                        "columnName": "City",
+                        "columnDisplayName": "City"
+                    },
+                    {
+                        "hidden": false,
+                        "columnType": "Number",
+                        "columnName": "Zip",
+                        "columnDisplayName": "Zip"
+                    }
+                ],
+                "samplingConfig": null,
+                "datagen": false,
+                "interactiveBuffer": null,
+                "libraryIdWithVersion": "49a564256d2d4821a08135ccb4a39547_1",
+                "facets": null,
+                "muteFacets": null
+            },
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    
+                ],
+                "Warning": [
+                    
+                ]
+            },
+            "color": "rgba(122, 188, 77, 1)"
+        },
+        {
+            "type": "Expression",
+            "active": true,
+            "publishPoints": null,
+            "annotation": null,
+            "expression": "hashvalue(@Company Name@ ,\"orgcleansing\")",
+            "newColumnName": "org cleansing",
+            "facets": null,
+            "muteFacets": null,
+            "$validationErrors": {
+                "Error": [
+                    
+                ],
+                "Warning": [
+                    
+                ]
+            },
+            "color": "#999"
+        }
+    ]
+}

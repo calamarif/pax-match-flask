@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div>
+        <h1>BMS External Match</h1>
+        <p class="lead"> Run External Match in Paxata</p>
+
+        <p> Select Paxata Library Item </p>
+        <select name= colours method="GET" action="/">
+
+            {% for colour in colours %}
+            <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+            {% endfor %}
+        </select>
+
+
+    </div>
+{% endblock %}

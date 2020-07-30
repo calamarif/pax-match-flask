@@ -1,0 +1,26 @@
+<html lang="en">
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>External Match</h1>
+        {% from "includes/_formhelpers.html" import render_field %}
+        <p> Press Run Button to apply the specified weights</p>
+
+        <form method="POST" action="">
+            <div class="form-group">
+                {{render_field(form.companyNameWeight, class="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.addressPart1Weight, class="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.addressPart2Weight, class="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.zipWeight, class="form-control")}}
+            </div>
+
+            <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+
+        </form>
+{% endblock %}
