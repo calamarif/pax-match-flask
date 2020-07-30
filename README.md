@@ -1,4 +1,3 @@
-# git_repo_personal
+# pax-match-flask
 
-1) Flask thing for TechData (Matching)
-2) Google Big Query push (from Paxata)
+- Flask front end for Paxata Matching

@@ -1,4 +1,4 @@
 #!/bin/bash
-source ./flask_python2_env/bin/activate
+source ./venv_python2/bin/activate
 python app.py
 

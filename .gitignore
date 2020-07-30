@@ -1,0 +1,7 @@
+*.pyc
+PaxMatch original.py
+.DS_Store
+start_marketing_solution_gui.sh
+app_dynamic_fields.pyc
+*.code-workspace
+venv_python2/*
