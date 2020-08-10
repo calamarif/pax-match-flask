@@ -173,8 +173,8 @@ def update_project_with_new_script(working_path,authorization_token,paxata_url,m
         myResponse.raise_for_status()
 
 def get_name_of_datasource(auth_token,paxata_url,libraryId,version):
-    url_request = (paxata_url + "/rest/library/data/"+str(libraryId) + "/" + version)
-
+    url_request = (paxata_url + "/rest/library/data/"+str(libraryId) + "/" + str(version))  
+    library_name = ""
     my_response = requests.get(url_request, auth=auth_token, verify=False)
     if(my_response.ok):
         jdata_datasources = json.loads(my_response.content)
@@ -281,10 +281,10 @@ def create_a_new_project(auth_token,paxata_url,project_name):
 
 
 # (7) Check if a Project Name exists and return it's ID
-def check_if_a_project_exists(auth_token,paxata_url,project_name):
+def check_if_a_project_exists(auth_token, paxata_url,project_name):
     projectId = ""
     url_request = (paxata_url + "/rest/projects?name=" + project_name)
-    my_response = requests.get(url_request,auth=auth_token , verify=False)
+    my_response = requests.get(url_request, auth=auth_token , verify=False)
     if(my_response.ok):
         jdata_new_project_response = json.loads(my_response.content)
         if (not jdata_new_project_response):
@@ -308,7 +308,7 @@ def insert_initial_data_into_empty_project(authorization_token, paxata_url,json_
     #update the script... take the existing script and manipulate it.
     updated_json_script = copy.deepcopy(json_of_new_project[0])
     updated_json_script['steps'][0]['importStep']['libraryId'] = str(datasource1)
-    updated_json_script['steps'][0]['importStep']['libraryVersion'] = 1
+    updated_json_script['steps'][0]['importStep']['libraryVersion'] = int(datasource1_version)
     updated_json_script['steps'][0]['importStep']['libraryIdWithVersion'] = str(datasource1) + "_" + str(datasource1_version)
     #function to get the metadata
     json_of_datasource_schema = get_library_data_to_insert_into_project(paxata_url, authorization_token,datasource1,str(datasource1_version))
@@ -415,15 +415,15 @@ def update_project_with_filter(working_path, authorization_token, paxata_url, pr
             counter_main_project += 1
     update_project_with_new_script(working_path,authorization_token,paxata_url,project_script[0],projectId)
 
-def main(paxata_url, datasource1_id_schema_list, datasource2_id_schema_list, column_weights):
+def main(paxata_url, paxata_restapi_token, datasource1_id_schema_list, datasource2_id_schema_list, column_weights):
     # *****************THESE ARE YO VARIABLES - YOU NEED TO EDIT THESE *******
     # These variables can be changed to whatever you need.
     # These three variables define where to look for the update file and where to move the processed file
     home_dir = os.path.expanduser('~')
-    working_path = home_dir + "/Documents/Paxata/development/git_repo_personal/flask/marketing_solution"
+    working_path = home_dir + "/Documents/Paxata/development/github/pax-match-flask"
     json_file_name = working_path + "/python_files/template_matching_project.json"
     #paxata_url = "http://localhost"
-    paxata_restapi_token = "95042539cd3e430c83bf7000a5c9d6c9"
+    #paxata_restapi_token = "95042539cd3e430c83bf7000a5c9d6c9"
     matching_project_name = "Matching"
     matching_step_name = "Master Weighted Score"
 
@@ -459,7 +459,8 @@ def main(paxata_url, datasource1_id_schema_list, datasource2_id_schema_list, col
     #Create a new project to match the files 
     #Ideally it would be good to make the project_name dynamic
     matching_project_name = "Matching Project"
-    matching_project_name = "Match Result - " + datasource1_name + "_and_" + datasource2_name
+    # decided to make the proect name statis, will need a more sophisticated approach in the future
+    #matching_project_name = "Match Result - " + datasource1_name + "_and_" + datasource2_name
 
     #### THIS IS A TEMPORARY LINE (ONCE I START PERFORMING DYNAMIC NAMED PROJECTS)
     projectId = check_if_a_project_exists(authorization_token,paxata_url,matching_project_name)

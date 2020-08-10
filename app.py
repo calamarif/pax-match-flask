@@ -177,7 +177,7 @@ def step3():
         cutoff_threshold = request.form["cutoff_threshold"]
         column_weights.extend((cutoff_threshold,weight_company_name,weight_address_part1,weight_address_part2))
         
-        url_for_matching_data = PaxMatch.main(paxata_url, datasource1_id_schema_list, datasource2_id_schema_list, column_weights)
+        url_for_matching_data = PaxMatch.main(paxata_url, paxata_restapi_token, datasource1_id_schema_list, datasource2_id_schema_list, column_weights)
 
         flash("Matching Run, check Paxata or the SFTP location for the results","success")
         return render_template('step5.html', url_for_matching_data= url_for_matching_data)
@@ -203,7 +203,7 @@ def externalmatch():
         addressPart1Weight = form.addressPart1Weight.data
         addressPart2Weight = form.addressPart2Weight.data
         zipWeight = form.zipWeight.data
-        PaxMatch.main(paxata_url,companyNameWeight,addressPart1Weight,addressPart2Weight,zipWeight)
+        PaxMatch.main(paxata_url, paxata_restapi_token, companyNameWeight,addressPart1Weight,addressPart2Weight,zipWeight)
 
         flash("Matching Run, check Paxata or the SFTP location for the results","success")
 
