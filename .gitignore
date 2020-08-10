@@ -5,3 +5,4 @@ start_marketing_solution_gui.sh
 app_dynamic_fields.pyc
 *.code-workspace
 venv_python2/*
+.vscode/*
