@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="OrgNoisewordRemoval:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/OrgNoisewordRemoval_jar</output-path>
+    <root id="archive" name="OrgNoisewordRemoval.jar">
+      <element id="module-output" name="OrgNoisewordRemoval" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+    </root>
+  </artifact>
+</component>

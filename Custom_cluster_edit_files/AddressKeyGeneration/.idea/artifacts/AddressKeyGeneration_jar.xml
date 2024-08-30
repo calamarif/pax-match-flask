@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AddressKeyGeneration:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AddressKeyGeneration_jar</output-path>
+    <root id="archive" name="MultiKeyGeneration.jar">
+      <element id="module-output" name="AddressKeyGeneration" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
